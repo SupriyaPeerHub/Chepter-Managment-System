@@ -1,4 +1,3 @@
-
 import EventCard from "../../../pages/EventCard";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
@@ -36,11 +35,11 @@ const eventTypes = [
 ];
 
 const sortOptions = [
-  { id: 'recently-added', label: 'Recently Added' },
-  { id: 'nearest-first', label: 'Nearest First' },
-  { id: 'farthest-first', label: 'Farthest First' },
-  { id: 'upcoming-week', label: 'Upcoming Week' },
-  { id: 'upcoming-month', label: 'Upcoming Month' },
+  { id: "recently-added", label: "Recently Added" },
+  { id: "nearest-first", label: "Nearest First" },
+  { id: "farthest-first", label: "Farthest First" },
+  { id: "upcoming-week", label: "Upcoming Week" },
+  { id: "upcoming-month", label: "Upcoming Month" },
 ];
 const PastEvents = () => {
   const [selectedZones, setSelectedZones] = useState([]);
@@ -54,7 +53,7 @@ const PastEvents = () => {
   const handleApplySort = (selectedOptions) => {
     setSelectedSortOptions(selectedOptions);
     setShowSortFilter(false); // Close after apply
-    console.log('Selected Sort Options:', selectedOptions); // Log the applied options
+    console.log("Selected Sort Options:", selectedOptions); // Log the applied options
   };
 
   return (
@@ -93,8 +92,9 @@ const PastEvents = () => {
             />
           </div>
           {/* Sort */}
-          <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md"
-          onClick={() => setShowSortFilter(!showSortFilter)}
+          <button
+            className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md"
+            onClick={() => setShowSortFilter(!showSortFilter)}
           >
             <ArrowUpDown size={16} />
             <span>Sort</span>
@@ -102,13 +102,13 @@ const PastEvents = () => {
         </div>
         {/* Sort Filter  */}
         {showSortFilter && (
-        <SortFilter
-          isOpen={showSortFilter}
-          onClose={() => setShowSortFilter(false)}
-          sortOptions={sortOptions}
-          onApply={handleApplySort} // Pass the apply handler
-        />
-      )}
+          <SortFilter
+            isOpen={showSortFilter}
+            onClose={() => setShowSortFilter(false)}
+            sortOptions={sortOptions}
+            onApply={handleApplySort} // Pass the apply handler
+          />
+        )}
         <div className="grid grid-cols-4 gap-4">
           {/* Event Card */}
           <EventCard />

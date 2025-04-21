@@ -40,7 +40,7 @@ const DropDown = ({ title, options, selectedOptions, onChange }) => {
                   <input
                     type="checkbox"
                     className="hidden"
-                    checked={selectedOptions.includes(option.id)}
+                    checked={selectedOptions?.includes(option.id)}
                     onChange={() => {}}
                   />
                   <div

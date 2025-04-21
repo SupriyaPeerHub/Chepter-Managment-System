@@ -36,7 +36,7 @@ export default function SortFilter({ isOpen, onClose, sortOptions, onApply }) {
       <hr className="border-white mb-6" />
 
       <div className="space-y-3">
-        {sortOptions.map((option) => (
+        {sortOptions?.map((option) => (
           <label
             key={option.id}
             className="flex items-center space-x-3 cursor-pointer group"
