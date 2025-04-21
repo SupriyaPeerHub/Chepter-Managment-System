@@ -59,7 +59,7 @@ const UpcomingEvents = () => {
 
 
   return (
-    <div className="flex-1 bg-[#0c1824] p-6 h-screen">
+    <div className="flex-1 bg-[#0c1824] p-6 h-full">
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
@@ -114,7 +114,6 @@ const UpcomingEvents = () => {
         <div className="grid sm:grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 gap-3">
           {/* Event Card */}
           <EventCard />
-
           <EventCard />
           <EventCard />
           <EventCard />
@@ -130,8 +129,6 @@ const UpcomingEvents = () => {
           <EventCard />
           <EventCard />
           <EventCard />
-
-          
         </div>
       </div>
     </div>

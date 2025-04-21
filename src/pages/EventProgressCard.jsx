@@ -67,7 +67,7 @@ export default function EventProgressCard() {
           {...pieParams}
         />
         {/* Text inside the pie chart */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-bold"
+        {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-bold"
           // style={{
           //   position: "absolute",
           //   top: "50%",
@@ -80,7 +80,7 @@ export default function EventProgressCard() {
           <div className="text-[#0B1E29] font-Gilroy-Regular text-[28px]">{totalEvents}</div>
           <div className="text-[#0B1E29] text-[12px]">Total</div>
           <div className="text-[#0B1E29] text-[12px]">no. of Events</div>
-        </div>
+        </div> */}
       </Box>
     </div>
   );

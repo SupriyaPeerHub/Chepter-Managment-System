@@ -212,7 +212,6 @@ import upload from "../../../assets/img/upload.png";
 import EventDetails from "../../../pages/EventDetails";
 import TeamMembers from "../../../pages/TeamMembers";
 const UpcomingAdminDetails = () => {
-
   return (
     // {/* 1. Upcomming Events */}
     <div className=" text-[#FFFFFF] bg-[#0c1824] h-auto">

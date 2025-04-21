@@ -30,6 +30,7 @@ import ProgressManagerDetails from "./components/Event Management/Progress/Progr
 import ProgressAdminDetails from "./components/Event Management/Progress/ProgressAdminDetails.jsx";
 import PastAdminDetails from "./components/Event Management/Past Event/PastAdminDetails.jsx";
 import PastManagerDetails from "./components/Event Management/Past Event/PastManagerDetails.jsx";
+import ZZZ from "../zzz.jsx";
 function App() {
   const router = createBrowserRouter([
     { path: "/login", element: <Login /> },
@@ -79,6 +80,7 @@ function App() {
         { path: "settings", element: <SettingsPage /> },
         { path: "test", element: <Test /> },
         { path: "test2", element: <Test2 /> },
+        { path: "Z", element: <ZZZ/> },
       ],
     },
   ]);

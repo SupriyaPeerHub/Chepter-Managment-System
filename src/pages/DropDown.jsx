@@ -18,7 +18,8 @@ const DropDown = ({ title, options, selectedOptions, onChange }) => {
         className="flex items-center justify-between w-32 px-3 py-2 font-Gilroy-SemiBold font-normal bg-[#243139] border-[#204E68] rounded-sm text-[#FFFFFF] shadow-md focus:ring-[#204E68]"
       >
         <span className="text-[#FFFFFF]">
-          {title} {selectedOptions.length > 0 && `(${selectedOptions.length})`}
+          {/* {selectedOptions.length > 0 && `(${selectedOptions.length})`} */}
+          {title}
         </span>
         <ChevronDown
           className={`w-5 h-5 text-[#FFFFFF] transition-transform ${
