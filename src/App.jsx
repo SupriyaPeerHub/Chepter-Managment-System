@@ -31,6 +31,8 @@ import ProgressAdminDetails from "./components/Event Management/Progress/Progres
 import PastAdminDetails from "./components/Event Management/Past Event/PastAdminDetails.jsx";
 import PastManagerDetails from "./components/Event Management/Past Event/PastManagerDetails.jsx";
 import ZZZ from "../zzz.jsx";
+import AdminCollageDetails from "./components/LearningResources/AdminCollageDetails.jsx";
+import ManagerCollageDetails from "./components/LearningResources/ManagerCollageDetails.jsx";
 function App() {
   const router = createBrowserRouter([
     { path: "/login", element: <Login /> },
@@ -72,6 +74,8 @@ function App() {
         { path: "event-planning/details", element: <EventDetails /> },
         { path: "view-events", element: <ViewEvents /> },
         { path: "learning-resources", element: <LearningResources /> },
+        { path: "admin/college-details", element: <AdminCollageDetails/>},
+        { path: "manager/college-details", element: <ManagerCollageDetails/>},
         { path: "data-management", element: <DataManagement /> },
         { path: "updates", element: <OverallUpdates /> },
         { path: "college-overview", element: <CollegeOverview /> },

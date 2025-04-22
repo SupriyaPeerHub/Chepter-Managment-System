@@ -1,7 +1,10 @@
+
+
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../../pages/DropDown";
-import Collage from "../../../pages/Collage";
+import DropDown from "../../pages/DropDown";
+import Collage from "../../pages/Collage";
+import upload from "../../assets/img/upload.png";
 
 // Sample data
 const zones = [
@@ -19,15 +22,15 @@ const states = [
   { id: "fl", label: "Florida" },
 ];
 
-const EventProposals = () => {
+const ManagerLearningResources = () => {
   const [selectedZones, setSelectedZones] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   return (
-    <div className="flex-1 bg-[#0c1824] p-6 h-[100vh]">
+    <div className="flex-1 bg-[#0c1824] p-6 h-full">
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
-          Upcoming Events
+          Learning Resources
         </h1>
         <div className="flex justify-between pb-6">
           {/* dropdown */}
@@ -45,16 +48,26 @@ const EventProposals = () => {
               onChange={setSelectedStates}
             />
           </div>
-          {/* Sort */}
-          <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
-            <ArrowUpDown size={16} />
-            <span>Sort</span>
-          </button>
+          <div className="flex gap-3">
+            {/* it is only for Manager */}
+            <button className="flex items-center space-x-2 bg-[#F3642A] text-white px-3 py-2 rounded-md">
+              <img
+                src={upload}
+                alt="upload-doc"
+                className="w-[22px] h-[22px]"
+              />
+              <span>Upload Resources</span>
+            </button>
+            <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
+              <ArrowUpDown size={16} />
+              <span>Sort</span>
+            </button>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {/* Event Proposals */}
           {Array.from({ length: 14 }).map((_, index) => (
-            <Collage key={index} fromPage="admin" />
+            <Collage key={index} fromPage="manager" />
           ))}
         </div>
       </div>
@@ -62,4 +75,4 @@ const EventProposals = () => {
   );
 };
 
-export default EventProposals;
+export default ManagerLearningResources;

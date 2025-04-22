@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../../pages/DropDown";
-import Collage from "../../../pages/Collage";
+import DropDown from "../../pages/DropDown";
+import Collage from "../../pages/Collage";
 
 // Sample data
 const zones = [
@@ -19,11 +19,11 @@ const states = [
   { id: "fl", label: "Florida" },
 ];
 
-const EventProposals = () => {
+const AdminLearningResources = () => {
   const [selectedZones, setSelectedZones] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   return (
-    <div className="flex-1 bg-[#0c1824] p-6 h-[100vh]">
+    <div className="flex-1 bg-[#0c1824] p-6 h-full">
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
@@ -62,4 +62,4 @@ const EventProposals = () => {
   );
 };
 
-export default EventProposals;
+export default AdminLearningResources;
