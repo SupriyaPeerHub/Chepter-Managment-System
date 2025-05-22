@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../pages/DropDown";
-import Collage from "../../pages/Collage";
+import DropDown from "../../UI/DropDown";
+import Collage from "../../UI/Collage";
 
 // Sample data
 const zones = [

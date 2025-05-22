@@ -1,8 +1,8 @@
 import { Filter } from "lucide-react";
-import EventCard from "../../pages/EventCard";
-import AddEventCard from "../../pages/AddEventCard";
+import EventCard from "../../UI/EventCard";
+import AddEventCard from "../../UI/AddEventCard";
 import { useState } from "react";
-import PlanAnEvent from "../../pages/PlanAnEvent";
+import PlanAnEvent from "../../UI/PlanAnEvent";
 import upload from "../../assets/img/upload.png";
 
 const EventPlanning = () => {

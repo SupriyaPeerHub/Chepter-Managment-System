@@ -1,7 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layouts/Layout.jsx";
-import Login from "./pages/Login/Login.jsx";
+import Login from "./UI/Login/Login.jsx";
 import Overview from "./components/Overview/Overview.jsx";
 import EventPlanning from "./components/EventPlanning/EventPlanning.jsx";
 import LearningResources from "./components/LearningResources/LearningResources.jsx";
@@ -17,7 +17,7 @@ import UpcomingEvents from "./components/Event Management/Upcoming/UpcomingEvent
 import InProgress from "./components/Event Management/Progress/InProgress.jsx";
 import PastEvents from "./components/Event Management/Past Event/PastEvents.jsx";
 import EventProposals from "./components/Event Management/Proposals/EventProposals.jsx";
-import EventDetails from "./pages/EventDetails.jsx";
+import EventDetails from "./UI/EventDetails.jsx";
 import Test2 from "./test2.jsx";
 import UpcomingManagerDetails from "./components/Event Management/Upcoming/UpcomingManagerDetails.jsx";
 import UpcomingAdminDetails from "./components/Event Management/Upcoming/UpcomingAdminDetails.jsx";

@@ -13,15 +13,15 @@ import gallery2 from "../../assets/img/gallery2.png";
 import gallery3 from "../../assets/img/gallery3.png";
 import gallery4 from "../../assets/img/gallery4.png";
 import gallery5 from "../../assets/img/gallery5.png";
-import EventCard from "../../pages/EventCard";
+import EventCard from "../../UI/EventCard";
 import pen from "../../assets/img/Pen.png";
-import AddEventCard from "../../pages/AddEventCard";
-import PlanAnEvent from "../../pages/PlanAnEvent";
-import EventProgressCard from "../../pages/EventProgressCard";
+import AddEventCard from "../../UI/AddEventCard";
+import PlanAnEvent from "../../UI/PlanAnEvent";
+import EventProgressCard from "../../UI/EventProgressCard";
 import { Link } from "react-router-dom";
 import Test from "../../Test";
 import Test2 from "../../test2";
-import CollegeDistribution from "../../pages/College Distribution/CollegeDistribution";
+import CollegeDistribution from "../../UI/College Distribution/CollegeDistribution";
 
 const Overview = () => {
   const [isPlanEvent, setIsPlanEvent] = useState(false);

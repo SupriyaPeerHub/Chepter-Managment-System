@@ -1,5 +1,5 @@
 import upload from "../../../assets/img/upload.png";
-import EventDetails from "../../../pages/EventDetails";
+import EventDetails from "../../../UI/EventDetails";
 
 function ProgressManagerDetails() {
   const tableHeaders = [

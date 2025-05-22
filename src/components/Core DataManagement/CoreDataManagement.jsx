@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import PostYourRequirement from "../../pages/PostYourRequirement";
-import TeamMembers from "../../pages/TeamMembers";
+import PostYourRequirement from "../../UI/PostYourRequirement";
+import TeamMembers from "../../UI/TeamMembers";
 
 const CoreDataManagement = () => {
   const [sponsorshipSent, setSponsorshipSent] = useState(null);

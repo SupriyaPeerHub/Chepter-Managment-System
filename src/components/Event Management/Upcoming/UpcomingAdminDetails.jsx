@@ -209,8 +209,8 @@ import upload from "../../../assets/img/upload.png";
 
 // export default UpcomingAdminDetails
 
-import EventDetails from "../../../pages/EventDetails";
-import TeamMembers from "../../../pages/TeamMembers";
+import EventDetails from "../../../UI/EventDetails";
+import TeamMembers from "../../../UI/TeamMembers";
 const UpcomingAdminDetails = () => {
   return (
     // {/* 1. Upcomming Events */}

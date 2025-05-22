@@ -6,10 +6,10 @@ function AddEventCard({ setIsPlanEvent }) {
       <img
         src={plan}
         alt=""
-        className="h-[100px] w-[100px] cursor-pointer"
+        className="h-[90px] w-[90px] cursor-pointer"
         onClick={() => setIsPlanEvent(true)}
       />
-      <h3 className="font-Gilroy text-white">Plan an Event</h3>
+      <h3 className="font-Gilroy text-white pt-5">Plan an Event</h3>
     </div>
   );
 }

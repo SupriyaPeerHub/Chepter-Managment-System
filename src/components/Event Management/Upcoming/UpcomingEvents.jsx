@@ -1,8 +1,8 @@
-import EventCard from "../../../pages/EventCard";
+import EventCard from "../../../UI/EventCard";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../../pages/DropDown";
-import SortFilter from "../../../pages/SortFilter";
+import DropDown from "../../../UI/DropDown";
+import SortFilter from "../../../UI/SortFilter";
 
 
 // Sample data

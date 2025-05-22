@@ -1,4 +1,4 @@
-import EventCard from "../../pages/EventCard";
+import EventCard from "../../UI/EventCard";
 
 const ViewEvents = () => {
   return (

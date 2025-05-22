@@ -1,5 +1,5 @@
 import upload from "../src/assets/img/upload.png";
-import EventDetails from "../src/pages/EventDetails";
+import EventDetails from "../src/UI/EventDetails";
 const Test = () => {
   const tableHeaders = [
     "Date",

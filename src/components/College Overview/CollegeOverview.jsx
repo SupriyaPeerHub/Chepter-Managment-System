@@ -2,7 +2,7 @@ import { useState } from "react";
 import Zoom1 from "../../assets/img/Zoom1.png";
 import ZZZ from "../../../zzz";
 import { ChevronDown } from "lucide-react";
-import FinancialGraph from "../../pages/FinancialGraph";
+import FinancialGraph from "../../UI/FinancialGraph";
 
 const Colleges = [
   "Indian Institute of Technology Bombay",
