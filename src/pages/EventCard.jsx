@@ -38,7 +38,7 @@ const EventCard = () => {
       eventPage = `/event-management/${submenuPath}/admin-details`;
     } else if (roleType === "coremember") {
       eventPage = "/event-planning/details";
-    } else if(roleType === "guest" || roleType === null){
+    } else if (roleType === "guest" || roleType === null) {
       eventPage = "/event-planning/details";
     }
     console.log("eventPage", eventPage);

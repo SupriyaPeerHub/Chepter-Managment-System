@@ -7,7 +7,7 @@ const DataManagement = () => {
   const [sponsorshipSent, setSponsorshipSent] = useState(null);
   const [rejectionReason, setRejectionReason] = useState(null);
   const [otherReason, setOtherReason] = useState("");
-// for form 
+  // for form
   const [isPostYourRequirement, setIsPostYourRequirement] = useState(false);
 
   // Create a ref for the report section
@@ -33,23 +33,30 @@ const DataManagement = () => {
     "Feedback",
   ];
 
-  console.log(isPostYourRequirement)
+  console.log(isPostYourRequirement);
 
   return (
     <div className="space-y-8 p-6 bg-[#0c1824]">
       {/* Team Members Section */}
       <div>
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg text-white font-Gilroy-SemiBold">Team Members</h2>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy-SemiBold"
-            onClick={() => setIsPostYourRequirement(true)}>
+          <h2 className="text-lg text-white font-Gilroy-SemiBold">
+            Team Members
+          </h2>
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy-SemiBold"
+            onClick={() => setIsPostYourRequirement(true)}
+          >
             Post Your Requirement
           </button>
         </div>
-        <TeamMembers/>
+        <TeamMembers />
       </div>
 
-      <PostYourRequirement isOpen={isPostYourRequirement} onClose={() => setIsPostYourRequirement(false)} />
+      <PostYourRequirement
+        isOpen={isPostYourRequirement}
+        onClose={() => setIsPostYourRequirement(false)}
+      />
 
       {/* Post-Event Sponsorship Follow-Up */}
       <div>
@@ -57,8 +64,11 @@ const DataManagement = () => {
           <h2 className="text-xl font-medium text-white font-Gilroy-SemiBold">
             Post-Event Sponsorship Follow-Up
           </h2>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy-SemiBold" 
-          onClick={scrollToReport} href="#posteventsponsorshipfollowup">
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy-SemiBold"
+            onClick={scrollToReport}
+            href="#posteventsponsorshipfollowup"
+          >
             View Report
           </button>
         </div>
@@ -156,7 +166,9 @@ const DataManagement = () => {
                     checked={sponsorshipSent === "yes"}
                     onChange={() => setSponsorshipSent("yes")}
                   />
-                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">Yes</span>
+                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">
+                    Yes
+                  </span>
                 </label>
                 <label className="flex items-center">
                   <input
@@ -166,7 +178,9 @@ const DataManagement = () => {
                     checked={sponsorshipSent === "no"}
                     onChange={() => setSponsorshipSent("no")}
                   />
-                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">No</span>
+                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">
+                    No
+                  </span>
                 </label>
               </div>
             </div>
@@ -208,7 +222,9 @@ const DataManagement = () => {
                     checked={rejectionReason === "no-response"}
                     onChange={() => setRejectionReason("no-response")}
                   />
-                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">No response</span>
+                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">
+                    No response
+                  </span>
                 </label>
                 <label className="flex items-center">
                   <input
@@ -218,7 +234,9 @@ const DataManagement = () => {
                     checked={rejectionReason === "other"}
                     onChange={() => setRejectionReason("other")}
                   />
-                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">Other</span>
+                  <span className="ml-2 text-sm font-Gilroy-Regular text-[#A0A0A0]">
+                    Other
+                  </span>
                   {rejectionReason === "other" && (
                     <input
                       type="text"
@@ -245,7 +263,7 @@ const DataManagement = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-Gilroy-Regular text-[#BEBAB9] mb-2">
+              <label className="block text-[16px] font-Gilroy-Regular text-[#BEBAB9] mb-2">
                 Any Feedback from Sponsors?
               </label>
               <textarea
@@ -276,7 +294,12 @@ const DataManagement = () => {
             <thead>
               <tr className="border-b border-[#204E68]">
                 {tableHeaders.map((header, index) => (
-                  <th key={index} className="px-4 py-3 text-left text-sm font-medium text-gray-400 border-t border-r border-l border-[#204E68]">{header}</th>
+                  <th
+                    key={index}
+                    className="px-4 py-3 text-left text-sm font-medium text-gray-400 border-t border-r border-l border-[#204E68]"
+                  >
+                    {header}
+                  </th>
                 ))}
               </tr>
             </thead>

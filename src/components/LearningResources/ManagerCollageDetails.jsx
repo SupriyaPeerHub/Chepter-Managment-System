@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import GroupPhoto from "./../../assets/img/GroupPhoto.png";
 import PeerHubLogo from "../../assets/img/PeerHubLogo.png";
-import { CoreMember } from "./Resources";
+import { CoreMember } from "./ResourcesData";
 const ManagerCollageDetails = () => (
   <div className="mt-24 p-6 z-0">
     <h1 className="text-[#BEBAB9] text-lg pb-4 font-Gilroy font-normal">

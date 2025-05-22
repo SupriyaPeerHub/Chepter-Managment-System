@@ -1,7 +1,6 @@
-
 import user from "../../assets/img/user.png";
 import detailsimg from "../../assets/img/arrow-left.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import PeerHub from "../../assets/img/PeerHub.png";
 import Event from "../../assets/img/Event.png";
@@ -13,11 +12,9 @@ import Learning from "../../assets/img/Learning.png";
 import Data from "../../assets/img/Data.png";
 import Overall from "../../assets/img/Overall.png";
 import Collage from "../../assets/img/Collage.png";
-import Chat from "../../assets/img/Chat.png";
-import Settings from "../../assets/img/Settings.png";
 import { useEffect } from "react";
 
-export const Sidebar = ( ) => {
+export const Sidebar = () => {
   // const location = useLocation();
   const [eventManagementOpen, setEventManagementOpen] = useState(false);
   const [dataManagementOpen, setdataManagementOpen] = useState(false);
@@ -36,14 +33,16 @@ export const Sidebar = ( ) => {
   const toggleEventManagement = () => {
     setEventManagementOpen(!eventManagementOpen);
     setActiveMenu("event-planning"); // Set the active menu when clicked
-    handleSubMenuClick("upcoming", "/event-management/upcoming")
-    // navigate('/event-management/upcoming');
+    handleSubMenuClick("upcoming", "/event-management/upcoming");
   };
-  
+
   // Automatically close the submenu if activeMenu is not "event-planning"
   useEffect(() => {
     if (activeMenu !== "event-planning") {
       setEventManagementOpen(false);
+    }
+    if (activeMenu !== "help-and-support") {
+      setHelpAndSupportOpen(false);
     }
   }, [activeMenu]);
 
@@ -53,7 +52,11 @@ export const Sidebar = ( ) => {
   };
   const toggleHelpAndSupport = () => {
     setHelpAndSupportOpen(!helpAndSupportOpen);
-    setActiveMenu( 'help-and-support'); // Set the active menu when clicked
+    setActiveMenu("help-and-support"); // Set the active menu when clicked
+    handleSubMenuClick(
+      "event-related-queries",
+      "/help-and-support/event-related-queries"
+    );
   };
 
   const handleSubMenuClick = (subMenu, Path) => {
@@ -80,7 +83,7 @@ export const Sidebar = ( ) => {
       {/* Sidebar Start*/}
       <nav>
         {/* 1. Overview */}
-        <Link
+        {/* <Link
           to={"/"}
           className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
             activeMenu === "/" ? "bg-[#F15C22]" : ""
@@ -89,10 +92,10 @@ export const Sidebar = ( ) => {
         >
           <img src={Overview} alt={`/`} />
           <span>Overview</span>
-         </Link>
+        </Link> */}
 
         {/* 2. Event Planning */}
-        <Link
+        {/* <Link
           to={"/event-planning"}
           className={`flex items-center gap-3 p-3 rounded-lg  mb-1 transition-colors cursor-pointer ${
             activeMenu === "/event-planning" ? "bg-[#F15C22]" : ""
@@ -101,19 +104,18 @@ export const Sidebar = ( ) => {
         >
           <img src={Event} alt={`/`} />
           <span>Event Planning</span>
-        </Link>
+        </Link> */}
 
         {/* 3. Event Managment */}
-        <div 
+        <div
           className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
             activeMenu === "event-planning" ? "bg-[#F15C22]" : ""
           }`} // Apply active class if menu is active
           onClick={toggleEventManagement}
-          
         >
-          <img src={Event} alt={`event-planing icon`} />
+          <img src={Event} alt={`event-planing-icon`} />
           <span>Event Management</span>
-          {eventManagementOpen &&  activeMenu === "event-planning" ? (
+          {eventManagementOpen && activeMenu === "event-planning" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
           ) : (
             <ChevronDown className="h-4 w-4 ml-auto" />
@@ -127,7 +129,9 @@ export const Sidebar = ( ) => {
                   ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
                   : ""
               }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("upcoming", "/event-management/upcoming")}
+              onClick={() =>
+                handleSubMenuClick("upcoming", "/event-management/upcoming")
+              }
               // hare problem
             >
               <span>Upcoming Events</span>
@@ -138,7 +142,12 @@ export const Sidebar = ( ) => {
                   ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
                   : ""
               }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("in-progress", "/event-management/in-progress")}
+              onClick={() =>
+                handleSubMenuClick(
+                  "in-progress",
+                  "/event-management/in-progress"
+                )
+              }
             >
               <span>In Progress</span>
             </li>
@@ -148,7 +157,12 @@ export const Sidebar = ( ) => {
                   ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
                   : ""
               }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("past-events", "/event-management/past-events")}
+              onClick={() =>
+                handleSubMenuClick(
+                  "past-events",
+                  "/event-management/past-events"
+                )
+              }
             >
               <span>Past Events</span>
             </li>
@@ -158,12 +172,18 @@ export const Sidebar = ( ) => {
                   ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
                   : ""
               }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("event-proposals", "/event-management/event-proposals")}
+              onClick={() =>
+                handleSubMenuClick(
+                  "event-proposals",
+                  "/event-management/event-proposals"
+                )
+              }
             >
               <span>Event Proposals</span>
             </li>
           </ul>
         )}
+
         {/* 4. View Events */}
         <Link
           to={"/view-events"}
@@ -196,13 +216,13 @@ export const Sidebar = ( ) => {
           }`} // Apply active class if menu is active
           onClick={toggleDataManagement}
         >
-          <img src={Data} alt={`data-management icon`} />
-          <span>Data Managment</span>
+          <img src={Data} alt={`data-management-icon`} />
+          <span>Data Management</span>
           {dataManagementOpen && activeMenu === "data-management" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
-            ) : (
+          ) : (
             <ChevronDown className="h-4 w-4 ml-auto" />
-            )}
+          )}
         </Link>
         {activeMenu === "data-management" && dataManagementOpen && (
           <ul className="ml-4">
@@ -263,35 +283,23 @@ export const Sidebar = ( ) => {
           <span>College Overview</span>
         </Link>
 
-        {/* 9. Peer Chart */}
-        <Link
-          to={"/chat"}
-          className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
-            activeMenu === "/chat" ? "bg-[#F15C22]" : ""
-          }`} // Apply active class if menu is active
-          onClick={() => setActiveMenu("/chat")}
-        >
-          <img src={Chat} alt={`/chat`} />
-          <span>Peer Chart</span>
-        </Link>
-
         {/* 10. Help and Support */}
-        <Link
-          to={'help-and-support'}
+        {/* <Link
+          to={"help-and-support"}
           className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
-            activeMenu ===  'help-and-support' ? "bg-[#F15C22]" : ""
+            activeMenu === "help-and-support" ? "bg-[#F15C22]" : ""
           }`} // Apply active class if menu is active
           onClick={toggleHelpAndSupport}
         >
           <img src={Help} alt={`help-support icon`} />
           <span>Help and Support</span>
-          {helpAndSupportOpen && activeMenu ===  'help-and-support' ? (
+          {helpAndSupportOpen && activeMenu === "help-and-support" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
-            ) : (
+          ) : (
             <ChevronDown className="h-4 w-4 ml-auto" />
-            )}
+          )}
         </Link>
-        {activeMenu ===  'help-and-support' && helpAndSupportOpen && (
+        {activeMenu === "help-and-support" && helpAndSupportOpen && (
           <ul className="ml-4">
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -334,18 +342,81 @@ export const Sidebar = ( ) => {
               <span>FAQ</span>
             </li>
           </ul>
-        )}
-        {/* 11. Setting */}
-        <Link
-          to={"/settings"}
+        )} */}
+
+        {/* Part 2 */}
+        {/* 10. Help and Support */}
+        <div
           className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
-            activeMenu === "/settings" ? "bg-[#F15C22]" : ""
+            activeMenu === "help-and-support" ? "bg-[#F15C22]" : ""
           }`} // Apply active class if menu is active
-          onClick={() => setActiveMenu("/settings")}
+          onClick={toggleHelpAndSupport}
         >
-          <img src={Settings} alt={`settings icon`} />
-          <span>Settings</span>
-        </Link>
+          <img src={Help} alt={`help-support icon`} />
+          <span>Help and Support</span>
+          {helpAndSupportOpen && activeMenu === "help-and-support" ? (
+            <ChevronUp className="h-4 w-4 ml-auto" />
+          ) : (
+            <ChevronDown className="h-4 w-4 ml-auto" />
+          )}
+        </div>
+
+        {activeMenu === "help-and-support" && helpAndSupportOpen && (
+          <ul className="ml-4">
+            <li
+              className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
+                activeSubMenu === "event-related-queries"
+                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
+                  : ""
+              }`}
+              onClick={() =>
+                handleSubMenuClick(
+                  "event-related-queries",
+                  "/help-and-support/event-related-queries"
+                )
+              }
+            >
+              <span>Event Related Queries</span>
+            </li>
+            <li
+              className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
+                activeSubMenu === "technical-help"
+                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
+                  : ""
+              }`}
+              onClick={() =>
+                handleSubMenuClick(
+                  "technical-help",
+                  "/help-and-support/technical-help"
+                )
+              }
+            >
+              <span>Technical Help</span>
+            </li>
+            <li
+              className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
+                activeSubMenu === "resources"
+                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
+                  : ""
+              }`}
+              onClick={() =>
+                handleSubMenuClick("resources", "/help-and-support/resources")
+              }
+            >
+              <span>Resources</span>
+            </li>
+            <li
+              className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
+                activeSubMenu === "faq"
+                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
+                  : ""
+              }`}
+              onClick={() => handleSubMenuClick("faq", "/help-and-support/faq")}
+            >
+              <span>FAQ</span>
+            </li>
+          </ul>
+        )}
       </nav>
 
       {/* PeerHub Name */}

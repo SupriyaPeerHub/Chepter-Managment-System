@@ -133,9 +133,7 @@ const Overview = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="w-3 h-3 rounded-full bg-[#02B2AF] mr-2"></div>
-                  <span className=" font-Gilroy text-white ">
-                    Upcoming
-                  </span>
+                  <span className=" font-Gilroy text-white ">Upcoming</span>
                 </div>
                 <span className="font-mono font-Gilroy text-white">01</span>
               </div>
@@ -201,7 +199,7 @@ const Overview = () => {
               <img
                 key={index}
                 src={gallery.img}
-                alt={`Slide ${index}`}
+                alt={`Slide_${index}`}
                 className="w-[250px] h-[200px] m-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
               />
             ))}

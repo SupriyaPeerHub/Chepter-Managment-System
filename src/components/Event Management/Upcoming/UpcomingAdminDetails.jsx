@@ -216,7 +216,7 @@ const UpcomingAdminDetails = () => {
     // {/* 1. Upcomming Events */}
     <div className=" text-[#FFFFFF] bg-[#0c1824] h-auto">
       {/* 2. In Progress Events */}
-      <h1 className="text-[#FFFFFF] text-lg pb-1 font-Gilroy font-normal pt-3 pl-6">
+      <h1 className="text-[#BEBAB9] text-lg pb-1 font-Gilroy font-normal pt-3 pl-6">
         Upcoming Events
       </h1>
       <EventDetails />
