@@ -180,13 +180,13 @@ const Overview = () => {
       <div className="mt-6">
         {/* Right to Left Scrolling Gallery */}
         <div className="overflow-hidden">
-          <div className="flex animate-scroll-right">
-            {galleryArray.concat(galleryArray).map((gallery, index) => (
+          <div className="scroll-gallery whitespace-nowrap">
+            {[...galleryArray, ...galleryArray].map((gallery, index) => (
               <img
                 key={index}
                 src={gallery.img}
                 alt={`Slide ${index}`}
-                className="w-[250px] h-[200px] m-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
+                className="w-[250px] h-[200px] mr-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105 inline-block"
               />
             ))}
           </div>
@@ -200,7 +200,7 @@ const Overview = () => {
                 key={index}
                 src={gallery.img}
                 alt={`Slide_${index}`}
-                className="w-[250px] h-[200px] m-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
+                className="w-[250px] h-[200px] m-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105 inline-block"
               />
             ))}
           </div>
@@ -257,21 +257,27 @@ const Overview = () => {
     //               <EventCard />
     //               <div className="flex gap-2 text-center justify-center align-center pl-32">
     //                 <span className="bg-[#F0BF11] rounded-full w-3 h-3 mt-[2px]"></span>
-    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">IN PROGRESS</span>
+    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">
+    //                   IN PROGRESS
+    //                 </span>
     //               </div>
     //             </div>
     //             <div className="flex flex-col gap-2">
     //               <EventCard />
     //               <div className="flex gap-2 text-center justify-center align-center pl-32">
     //                 <span className="bg-[#EE681D] rounded-full w-3 h-3 mt-[2px]"></span>
-    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">IN PROGRESS</span>
+    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">
+    //                   IN PROGRESS
+    //                 </span>
     //               </div>
     //             </div>
     //             <div className="flex flex-col gap-2">
     //               <EventCard />
     //               <div className="flex gap-2 text-center justify-center align-center pl-32">
     //                 <span className="bg-[#F0BF11] rounded-full w-3 h-3 mt-[2px]"></span>
-    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">IN REVIEW</span>
+    //                 <span className="text-[#FFFFFF] text-[12px] font-Gilroy ">
+    //                   IN REVIEW
+    //                 </span>
     //               </div>
     //             </div>
     //           </div>

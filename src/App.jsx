@@ -5,7 +5,6 @@ import Login from "./pages/Login/Login.jsx";
 import Overview from "./components/Overview/Overview.jsx";
 import EventPlanning from "./components/EventPlanning/EventPlanning.jsx";
 import LearningResources from "./components/LearningResources/LearningResources.jsx";
-import DataManagement from "./components/DataManagement/DataManagement.jsx";
 import OverallUpdates from "./components/OverallUpdates/OverallUpdates.jsx";
 import SettingsPage from "./components/SettingsPage/SettingsPage.jsx";
 // import ErrorPage from './components/ErrorPage'; // Optional: Add an error page for unmatched routes
@@ -33,6 +32,10 @@ import EventRelatedQueries from "./components/HelpAndSupport/EventRelatedQueries
 import TechnicalHelp from "./components/HelpAndSupport/Technical Help/TechnicalHelp.jsx";
 import FAQ from "./components/HelpAndSupport/FAQ/FAQ.jsx";
 import Resources from "./components/HelpAndSupport/Resources/Resources.jsx";
+import CoreDataManagement from "./components/Core DataManagement/CoreDataManagement.jsx";
+import SponsorshipRequest from "./components/Internal DataManagement/Sponsorship Request/SponsorshipRequest.JSX";
+import SponsorsReport from "./components/Internal DataManagement/Sponsors Report/SponsorsReport.jsx";
+import EventParticipantsRecord from "./components/Internal DataManagement/Event Participants Record/EventParticipantsRecord.jsx";
 function App() {
   const router = createBrowserRouter([
     { path: "/login", element: <Login /> },
@@ -85,7 +88,21 @@ function App() {
         { path: "learning-resources", element: <LearningResources /> },
         { path: "admin/college-details", element: <AdminCollageDetails /> },
         { path: "manager/college-details", element: <ManagerCollageDetails /> },
-        { path: "data-management", element: <DataManagement /> },
+        // Internal Data Management
+        {
+          path: "internal-data-management/sponsorship-request",
+          element: <SponsorshipRequest />,
+        },
+        {
+          path: "/internal-data-management/sponsors-report",
+          element: <SponsorsReport />,
+        },
+        {
+          path: "/internal-data-management/event-participants-record",
+          element: <EventParticipantsRecord />,
+        },
+        // Core Data Management
+        { path: "core-data-management", element: <CoreDataManagement /> },
         { path: "updates", element: <OverallUpdates /> },
         { path: "college-overview", element: <CollegeOverview /> },
         // Help and Supprot

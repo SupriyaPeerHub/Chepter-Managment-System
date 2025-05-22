@@ -79,3 +79,26 @@
 .font-Gilroy-RegularItalic {
   font-family: "Gilroy-RegularItalic";
 }
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-gallery {
+  display: inline-flex;
+  animation: scroll-right 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

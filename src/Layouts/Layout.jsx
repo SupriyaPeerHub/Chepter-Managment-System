@@ -92,6 +92,7 @@ const Layout = () => {
         icon: Learning,
         label: "Learning Resources",
       },
+      { path: "/core-data-management", icon: Data, label: "Data Management" },
       { path: "/data-management", icon: Data, label: "Data Management" },
       { path: "/updates", icon: Overall, label: "Overall Updates" },
       { path: "/chat", icon: Chat, label: "Peer Chat" },

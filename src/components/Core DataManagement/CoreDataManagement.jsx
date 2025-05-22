@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import PostYourRequirement from "../../pages/PostYourRequirement";
 import TeamMembers from "../../pages/TeamMembers";
 
-const DataManagement = () => {
+const CoreDataManagement = () => {
   const [sponsorshipSent, setSponsorshipSent] = useState(null);
   const [rejectionReason, setRejectionReason] = useState(null);
   const [otherReason, setOtherReason] = useState("");
@@ -376,4 +376,4 @@ const DataManagement = () => {
   );
 };
 
-export default DataManagement;
+export default CoreDataManagement;
