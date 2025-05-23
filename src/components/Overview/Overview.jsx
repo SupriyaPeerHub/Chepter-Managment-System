@@ -21,7 +21,7 @@ import EventProgressCard from "../../UI/EventProgressCard";
 import { Link } from "react-router-dom";
 import Test from "../../Test";
 import Test2 from "../../test2";
-import CollegeDistribution from "../../UI/College Distribution/CollegeDistribution";
+import CollegeDistribution from "../../UI/CollegeDistribution";
 
 const Overview = () => {
   const [isPlanEvent, setIsPlanEvent] = useState(false);

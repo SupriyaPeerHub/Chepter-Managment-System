@@ -1,7 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layouts/Layout.jsx";
-import Login from "./UI/Login/Login.jsx";
+import Login from "./components/Login/Login.jsx";
 import Overview from "./components/Overview/Overview.jsx";
 import EventPlanning from "./components/EventPlanning/EventPlanning.jsx";
 import LearningResources from "./components/LearningResources/LearningResources.jsx";

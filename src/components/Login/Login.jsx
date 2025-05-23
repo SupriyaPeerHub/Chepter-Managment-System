@@ -4,25 +4,31 @@ import group2 from "../../assets/img/group2.png";
 import apple from "../../assets/img/apple.png";
 import google from "../../assets/img/google.png";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { setFormData, setRememberMe, toggleShowPassword } from '../../redux/authSlice/authSlice.jsx';
-import { useLoginUserMutation } from '../../redux/authSlice/authApi.jsx';
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setFormData,
+  setRememberMe,
+  toggleShowPassword,
+} from "../../redux/authSlice/authSlice.jsx";
+import { useLoginUserMutation } from "../../redux/authSlice/authApi.jsx";
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { showPassword, formData, rememberMe } = useSelector((state) => state.auth);
+  const { showPassword, formData, rememberMe } = useSelector(
+    (state) => state.auth
+  );
   const [loginUser, { isLoading }] = useLoginUserMutation();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const user = await loginUser(formData).unwrap();
-      console.log('User logged in successfully:', user);
+      console.log("User logged in successfully:", user);
       navigate("/");
     } catch (err) {
-      console.error('Failed to login:', err);
+      console.error("Failed to login:", err);
     }
   };
 
@@ -46,27 +52,39 @@ function Login() {
       {/* Right side with login form */}
       <div className="bg-white p-8 shadow-2xl max-w-md rounded-lg">
         <h2 className="text-2xl font-bold mb-2">Login</h2>
-        <p className="text-gray-600 mb-1 text-sm">Log in to access your dashboard and keep things moving!</p>
+        <p className="text-gray-600 mb-1 text-sm">
+          Log in to access your dashboard and keep things moving!
+        </p>
         <form onSubmit={handleLogin}>
           <div className="space-y-6 mt-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email
+              </label>
               <input
                 type="email"
                 value={formData.email}
-                onChange={(e) => dispatch(setFormData({ ...formData, email: e.target.value }))}
+                onChange={(e) =>
+                  dispatch(setFormData({ ...formData, email: e.target.value }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF5722] focus:border-transparent"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password
+              </label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={formData.password}
-                  onChange={(e) => dispatch(setFormData({ ...formData, password: e.target.value }))}
+                  onChange={(e) =>
+                    dispatch(
+                      setFormData({ ...formData, password: e.target.value })
+                    )
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF5722] focus:border-transparent"
                   placeholder="Enter your password"
                 />
@@ -88,7 +106,12 @@ function Login() {
                 onChange={(e) => dispatch(setRememberMe(e.target.checked))}
                 className="h-4 w-4 text-[#FF5722] focus:ring-[#FF5722] border-gray-300 rounded"
               />
-              <label htmlFor="remember" className="ml-2 block text-sm text-gray-700">Remember me</label>
+              <label
+                htmlFor="remember"
+                className="ml-2 block text-sm text-gray-700"
+              >
+                Remember me
+              </label>
             </div>
 
             <button
@@ -96,7 +119,7 @@ function Login() {
               className="w-full bg-[#FF5722] text-white py-2 px-4 rounded-md hover:bg-[#F4511E] transition-colors"
               disabled={isLoading}
             >
-              {isLoading ? 'Logging in...' : 'Login'}
+              {isLoading ? "Logging in..." : "Login"}
             </button>
           </div>
         </form>
