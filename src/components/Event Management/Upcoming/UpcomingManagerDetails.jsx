@@ -11,19 +11,17 @@ const UpcomingManagerDetails = () => {
     "Upload",
   ];
   return (
-    // <div>
-    // {/* 1. Upcomming Events */}
-    <div className=" text-[#FFFFFF] bg-[#0c1824]">
+    // Upcomming Events
+    <div className=" text-[#FFFFFF] bg-[#0B1E29] pl-6 pt-6">
       {/* 2. In Progress Events */}
-      <h1 className="text-[#FFFFFF] text-lg pb-2 font-Gilroy font-normal pl-6">
+      <h1 className="text-[#FFFFFF] text-lg pb-2 font-Gilroy font-normal">
         Upcoming Events
       </h1>
       <EventDetails />
-      <div className="p-6">
+      <div className="mt-6">
         <TeamMembers />
       </div>
     </div>
-    // </div>
   );
 };
 

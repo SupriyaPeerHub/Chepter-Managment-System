@@ -209,6 +209,9 @@ import upload from "../../../assets/img/upload.png";
 
 // export default UpcomingAdminDetails
 
+
+//! this is final
+
 import EventDetails from "../../../UI/EventDetails";
 import TeamMembers from "../../../UI/TeamMembers";
 const UpcomingAdminDetails = () => {
@@ -312,7 +315,7 @@ const UpcomingAdminDetails = () => {
 export default UpcomingAdminDetails;
 
 // // import upload from "../src/assets/img/upload.png";
-// import EventDetails from "../../../pages/EventDetails";
+// import EventDetails from "../../../UI/EventDetails";
 // const UpcomingAdminDetails = () => {
 //   const tableHeaders = [
 //     "Date",

@@ -23,7 +23,7 @@ const EventProposals = () => {
   const [selectedZones, setSelectedZones] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   return (
-    <div className="flex-1 bg-[#0c1824] p-6 h-[100vh]">
+    <div className="flex-1 bg-[#0c1824] p-6 h-full">
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
@@ -54,7 +54,7 @@ const EventProposals = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {/* Event Proposals */}
           {Array.from({ length: 14 }).map((_, index) => (
-            <Collage key={index} fromPage="admin" />
+            <Collage key={index} fromPage="manager" variant="proposals" />
           ))}
         </div>
       </div>

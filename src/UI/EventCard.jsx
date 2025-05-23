@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 const EventCard = () => {
   const navigate = useNavigate();
   const locationPath = useLocation();
-  const [roleType, setRoleType] = useState("manager"); //initially null
+  const [roleType, setRoleType] = useState("manager"); //initially null //admin
 
   // useEffect(() => {
   //   // Fetch the roleType from localStorage or state management

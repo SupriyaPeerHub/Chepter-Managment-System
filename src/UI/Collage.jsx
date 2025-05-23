@@ -1,23 +1,24 @@
 import Amity from "../assets/img/Amity.png";
 import { useNavigate } from "react-router-dom";
 
-const Collage = ({ fromPage }) => {
+const Collage = ({ fromPage, variant }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     console.log(`Clicked from: ${fromPage}`);
-    if (fromPage === "admin") {
-      navigate(`/${fromPage}/college-details`);
-    }else if(fromPage === "manager"){
-      navigate(`/${fromPage}/college-details`)
-    }else{
+    if (fromPage === "admin" && variant =="proposals") {
+      navigate("event-management/event-proposals/admin-details");
+    } else if (fromPage === "manager" && variant =="proposals") {
+      navigate("/event-management/event-proposals/manager-details");
+    } else {
       return;
     }
   };
   return (
-    <div className="flex flex-col w-40 h-40 border rounded-sm border-[#204E68] overflow-hidden m-4 justify-center items-center align-middle cursor-pointer"
-    onClick={handleClick}
+    <div
+      className="flex flex-col w-40 h-40 border rounded-sm border-[#204E68] overflow-hidden  justify-center items-center align-middle cursor-pointer"
+      onClick={handleClick}
     >
-    {/* // <div
+      {/* // <div
     //   className="flex flex-col w-full h-48 border rounded-sm border-[#204E68] overflow-hidden justify-center items-center cursor-pointer"
     //   onClick={handleClick}
     // > */}

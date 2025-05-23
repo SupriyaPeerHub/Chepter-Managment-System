@@ -8,20 +8,20 @@ const teamMembers = [
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
   },
-  {
-    role: "TREASURER",
-    name: "Akshi Khanna",
-    email: "akshi.k@amity.edu",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-  },
-  {
-    role: "EVENT COORDINATOR",
-    name: "Mehul Prajapati",
-    email: "mehul.p@amity.edu",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-  },
+  // {
+  //   role: "TREASURER",
+  //   name: "Akshi Khanna",
+  //   email: "akshi.k@amity.edu",
+  //   image:
+  //     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+  // },
+  // {
+  //   role: "EVENT COORDINATOR",
+  //   name: "Mehul Prajapati",
+  //   email: "mehul.p@amity.edu",
+  //   image:
+  //     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+  // },
   {
     role: "MARKETING OUTREACH",
     name: "Tanya Jain",

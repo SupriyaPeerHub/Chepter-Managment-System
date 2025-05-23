@@ -36,6 +36,7 @@ import CoreDataManagement from "./components/Core DataManagement/CoreDataManagem
 import SponsorshipRequest from "./components/Internal DataManagement/Sponsorship Request/SponsorshipRequest.JSX";
 import SponsorsReport from "./components/Internal DataManagement/Sponsors Report/SponsorsReport.jsx";
 import EventParticipantsRecord from "./components/Internal DataManagement/Event Participants Record/EventParticipantsRecord.jsx";
+import ManagerEventProposalsDetails from "./components/Event Management/Proposals/ManagerEventProposalsDetails.jsx";
 function App() {
   const router = createBrowserRouter([
     { path: "/login", element: <Login /> },
@@ -79,9 +80,18 @@ function App() {
           path: "event-management/past-events/admin-details",
           element: <PastAdminDetails />,
         },
+        // Event Proposals
         {
           path: "event-management/event-proposals",
           element: <EventProposals />,
+        },
+        // {
+        //   path: "event-management/event-proposals/admin-details",
+        //   element: <AdminEventProposalsDetails />,
+        // },
+        {
+          path: "event-management/event-proposals/manager-details",
+          element: <ManagerEventProposalsDetails />,
         },
         { path: "event-planning/details", element: <EventDetails /> },
         { path: "view-events", element: <ViewEvents /> },

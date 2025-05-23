@@ -1,7 +1,7 @@
+import CollageEventDetails from "../../../UI/CollageEventDetails";
 import upload from "../../../assets/img/upload.png";
-import EventDetails from "../../../UI/EventDetails";
 
-function ProgressManagerDetails() {
+function ManagerEventProposalsDetails() {
   const tableHeaders = [
     "Date",
     "Title",
@@ -11,58 +11,20 @@ function ProgressManagerDetails() {
     "Upload",
   ];
   return (
-    <div className=" text-[#FFFFFF] bg-[#0B1E29] h-auto p-6">
-      <h1 className="text-[#FFFFFF] text-lg pb-2 font-Gilroy font-normal ">
-        In Progress Events
+    <div className="flex-1 bg-[#0B1E29] p-6">
+      <h1 className="text-[#FFFFFF] text-lg pt-3 pb-8 font-Gilroy">
+        Event Proposals
       </h1>
-      <EventDetails />
-      {/* Event Progress Steps */}
-      <div className="flex items-center justify-between pr-6 mt-2 pt-3 pb-3">
-        <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white">
-            1
-          </div>
-          <div className="ml-2">
-            <p className="text-white font-Gilroy">Idea Submission</p>
-          </div>
-        </div>
-        <div className="h-0.5 flex-1 bg-gray-700 mx-4" />
-        <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white">
-            2
-          </div>
-          <div className="ml-2">
-            <p className="text-gray-400 font-Gilroy">In Progress</p>
-          </div>
-        </div>
-        <div className="h-0.5 flex-1 bg-gray-700 mx-4" />
-        <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-Gilroy">
-            3
-          </div>
-          <div className="ml-2">
-            <p className="text-gray-400 font-Gilroy">In Review</p>
-          </div>
-        </div>
-        <div className="h-0.5 flex-1 bg-gray-700 mx-4" />
-        <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white">
-            4
-          </div>
-          <div className="ml-2">
-            <p className="text-gray-400 font-Gilroy">Final Evaluation</p>
-          </div>
-        </div>
-      </div>
+      <CollageEventDetails />
       {/* Table */}
-      <div className="rounded-lg overflow-hidden pt-3 pb-10">
+      <div className="rounded-lg overflow-hidden mt-10 pr-8 pb-10">
         <table className="w-full border border-[#204E68]">
           <thead>
             <tr className="border-b border-[#204E68]">
               {tableHeaders.map((header, index) => (
                 <th
                   key={index}
-                  className="px-4 py-3 text-left text-sm font-medium text-gray-400 border-t border-r border-l border-[#204E68]"
+                  className="px-4 py-3 text-left text-sm font-medium text-gray-400 border-t border-r border-l border-[#204E68] whitespace-nowrap"
                 >
                   {header}
                 </th>
@@ -75,7 +37,7 @@ function ProgressManagerDetails() {
               <td className="px-4 py-3">Chai Pe Charcha</td>
               <td className="px-4 py-3">Community & Networking Event</td>
               <td className="px-4 py-3">
-                <span className="border border-[#717171] bg-[#717171] text-white pt-1 pb-1 pl-2 pr-2">
+                <span className="border border-[#717171] bg-[#717171] text-white pt-1 pb-1 pl-2 pr-2 whitespace-nowrap">
                   On going
                 </span>
               </td>
@@ -89,9 +51,9 @@ function ProgressManagerDetails() {
                 </div>
               </td>
               <td className="px-4 py-3">
-                <div className="flex flex-col justify-center align-center">
+                <div>
                   {/* <label className="block text-white mb-1">Document</label> */}
-                  <div className="border-2 border-gray-600 rounded-md p-1.5 text-center cursor-pointer  transition-colors">
+                  <div className="border-2 border-gray-600 rounded-md p-2 text-center cursor-pointer  transition-colors whitespace-nowrap">
                     <input
                       type="file"
                       className="hidden"
@@ -105,12 +67,6 @@ function ProgressManagerDetails() {
                       <span className="text-gray-400">Upload Document</span>
                     </label>
                   </div>
-                  <button
-                    type="submit"
-                    className="bg-[#F3642A] w-24 hover:bg-[#d94d21] text-[#FFFFFF] px-3 mt-1 py-1 rounded font-Gilroy-SemiBold"
-                  >
-                    Upload
-                  </button>
                 </div>
               </td>
             </tr>
@@ -122,6 +78,7 @@ function ProgressManagerDetails() {
         <h1 className="text-[#BEBAB9] text-lg pb-3 font-Gilroy pl-5">
           Add Comment
         </h1>
+
         <div className="flex flex-col justify-center pr-10 gap-2">
           {/* 1 comment*/}
           <div className="flex pl-5 pr-2">
@@ -160,4 +117,4 @@ function ProgressManagerDetails() {
   );
 }
 
-export default ProgressManagerDetails;
+export default ManagerEventProposalsDetails;

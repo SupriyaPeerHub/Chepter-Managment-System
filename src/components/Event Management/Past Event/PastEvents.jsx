@@ -61,7 +61,7 @@ const PastEvents = () => {
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
-          Upcoming Events
+          Past Events
         </h1>
         <div className="flex justify-between pb-6">
           {/* dropdown */}

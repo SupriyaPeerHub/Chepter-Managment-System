@@ -1,8 +1,6 @@
 import { Eye, EyeOff } from "lucide-react";
 import group1 from "../../assets/img/group.png";
 import group2 from "../../assets/img/group2.png";
-import apple from "../../assets/img/apple.png";
-import google from "../../assets/img/google.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {

@@ -6,7 +6,7 @@ const EventDetails = () => {
   const [roleType, setRoleType] = useState(null); //initially null
   console.log(roleType);
   return (
-    <div className={`flex-1 pt-6 pr-6 bg-[#0c1824] ${roleType !== null ? "h-screen" : ""}`}>
+    <div className={`flex-1 bg-[#0B1E29] ${roleType !== null ? "h-screen" : ""}`}>
 
       {/* 1st Part */}
       {roleType === null ||
@@ -23,7 +23,7 @@ const EventDetails = () => {
         ))}
 
       {/* 2nd Part */}
-      <div className="pl-6 text-[#FFFFFF] ">
+      <div className=" text-[#FFFFFF] ">
         {/* <h1 className="text-[#FFFFFF]  text-lg pb-3 font-Gilroy">
           Upcoming Events
         </h1> */}
