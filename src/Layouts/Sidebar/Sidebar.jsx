@@ -1,10 +1,10 @@
 import user from "../../assets/img/user.png";
-import detailsimg from "../../assets/img/arrow-left.png";
+import ArrowLeft from "../../assets/img/ArrowLeft.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import PeerHub from "../../assets/img/PeerHub.png";
 import Event from "../../assets/img/Event.png";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronUp, ChevronDown, Import } from "lucide-react";
 import { useState } from "react";
 import Help from "../../assets/img/Help.png";
 import Overview from "../../assets/img/Overview.png";
@@ -12,6 +12,7 @@ import Learning from "../../assets/img/Learning.png";
 import Data from "../../assets/img/Data.png";
 import Overall from "../../assets/img/Overall.png";
 import Collage from "../../assets/img/Collage.png";
+import AddMembers from "../../assets/img/AddMembers.png";
 import { useEffect } from "react";
 
 export const Sidebar = () => {
@@ -70,17 +71,25 @@ export const Sidebar = () => {
   };
   // console.log("activeMenu",activeMenu, "eventManagementOpen",eventManagementOpen);
   return (
-    <div className="w-64 min-h-screen text-white fixed p-2 shadow border-r-2">
+    <div className="w-64 min-h-screen text-white fixed p-2 shadow border-r-2 border-[#546169] bg-[#0B1E29]">
       {/* Top Sidebar */}
       <div className="mb-8">
         <div className="flex items-center gap-3 p-2">
-          <img src={user} alt="user-img" className="w-10 h-10 rounded-full" />
+          <img
+            src={user}
+            alt="user-img"
+            className="w-10 h-10 rounded-full cursor-pointer"
+          />
           <div>
-            <h2 className="font-semibold">Sanket Mondal</h2>
-            <p className="text-sm text-gray-400">President</p>
+            <h1 className="font-semibold text-[#FFEEE6]">Sanket Mondal</h1>
+            <p className="text-[14px] text-[#BEBAB9]">President</p>
           </div>
           <div>
-            <img src={detailsimg} alt="account-details" />
+            <img
+              className="w-[10px] h-[10px] cursor-pointer"
+              src={ArrowLeft}
+              alt="account-details"
+            />
           </div>
         </div>
       </div>
@@ -96,7 +105,9 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/")}
         >
           <img src={Overview} alt={`/`} />
-          <span>Overview</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Overview
+          </span>
         </Link>
 
         {/* 2. Event Planning */}
@@ -108,7 +119,9 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/event-planning")}
         >
           <img src={Event} alt={`/`} />
-          <span>Event Planning</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Event Planning
+          </span>
         </Link>
 
         {/* 3. Event Managment */}
@@ -119,7 +132,9 @@ export const Sidebar = () => {
           onClick={toggleEventManagement}
         >
           <img src={Event} alt={`event-planing-icon`} />
-          <span>Event Management</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Event Management
+          </span>
           {eventManagementOpen && activeMenu === "event-planning" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
           ) : (
@@ -139,7 +154,9 @@ export const Sidebar = () => {
               }
               // hare problem
             >
-              <span>Upcoming Events</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Upcoming Events
+              </span>
             </li>
             <li
               className={`py-2 px-4  rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -154,7 +171,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>In Progress</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                In Progress
+              </span>
             </li>
             <li
               className={`py-2 px-4  rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -169,7 +188,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Past Events</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Past Events
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -184,7 +205,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Event Proposals</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Event Proposals
+              </span>
             </li>
           </ul>
         )}
@@ -198,7 +221,9 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/view-events")}
         >
           <img src={Event} alt={`/view-events`} />
-          <span>View Events</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            View Events
+          </span>
         </Link>
 
         {/* 5. Learning Resources */}
@@ -210,7 +235,9 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/learning-resources")}
         >
           <img src={Learning} alt={`/learning-resources`} />
-          <span>Learning Resources</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Learning Resources
+          </span>
         </Link>
 
         {/*6. Core Data Management */}
@@ -222,61 +249,10 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/core-data-management")}
         >
           <img src={Data} alt={`/core-data-management`} />
-          <span>Data Management</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Data Management
+          </span>
         </Link>
-
-        {/* 7. Internal Data Managment */}
-        {/* <Link
-          to={"/data-management"}
-          className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
-            activeMenu === "data-management" ? "bg-[#F15C22]" : ""
-          }`} // Apply active class if menu is active
-          onClick={toggleDataManagement}
-        >
-          <img src={Data} alt={`data-management-icon`} />
-          <span>Data Management</span>
-          {dataManagementOpen && activeMenu === "data-management" ? (
-            <ChevronUp className="h-4 w-4 ml-auto" />
-          ) : (
-            <ChevronDown className="h-4 w-4 ml-auto" />
-          )}
-        </Link>
-        {activeMenu === "data-management" && dataManagementOpen && (
-          <ul className="ml-4">
-            <li
-              className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
-                activeSubMenu === "sponsorship-request"
-                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
-                  : ""
-              }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("sponsorship-request")}
-            >
-              <span>Sponsorship Request</span>
-            </li>
-            <li
-              className={`py-2 px-4  rounded-md flex items-center space-x-2 cursor-pointer ${
-                activeSubMenu === "sponsors-report"
-                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
-                  : ""
-              }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("sponsors-report")}
-            >
-              <span>Sponsors Report</span>
-            </li>
-            <li
-              className={`py-2 px-4  rounded-md flex items-center space-x-2 cursor-pointer ${
-                activeSubMenu === "event-participants-record"
-                  ? "border border-[#204E68] text-[#000000A6] bg-[#F4E1D2]"
-                  : ""
-              }`} // Apply active class if submenu is active
-              onClick={() => handleSubMenuClick("event-participants-record")}
-            >
-              <span>Event Participants Record</span>
-            </li>
-          </ul>
-        )} */}
-
-        {/* Part 2 */}
 
         {/* 7. Internal Data Management */}
         <div
@@ -286,7 +262,9 @@ export const Sidebar = () => {
           onClick={toggleDataManagement}
         >
           <img src={Data} alt="internal-data-management-icon" />
-          <span>Data Management</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Data Management
+          </span>
           {dataManagementOpen && activeMenu === "internal-data-management" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
           ) : (
@@ -309,7 +287,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Sponsorship Request</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Sponsorship Request
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -324,7 +304,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Sponsors Report</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Sponsors Report
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -339,7 +321,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Event Participants Record</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Event Participants Record
+              </span>
             </li>
           </ul>
         )}
@@ -353,7 +337,9 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/updates")}
         >
           <img src={Overall} alt={`/updates`} />
-          <span>Overall Updates</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Overall Updates
+          </span>
         </Link>
 
         {/* 9. Collage Overview */}
@@ -365,18 +351,36 @@ export const Sidebar = () => {
           onClick={() => setActiveMenu("/college-overview")}
         >
           <img src={Collage} alt={`/collage`} />
-          <span>College Overview</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            College Overview
+          </span>
         </Link>
 
-        {/* 10. Help and Support */}
-        <div
+        {/* 10. Learning Resources */}
+        <Link
+          to={"add-members"}
+          className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
+            activeMenu === "/add-members" ? "bg-[#F15C22]" : ""
+          }`} // Apply active class if menu is active
+          onClick={() => setActiveMenu("/add-members")}
+        >
+          <img src={AddMembers} alt={`add-members`} className="h-[1.7rem] w-[1.7rem]"/>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Add Members
+          </span>
+        </Link>
+
+        {/* 11. Help and Support */}
+        {/* <div
           className={`flex items-center gap-3 p-3 rounded-lg mb-1 transition-colors cursor-pointer ${
             activeMenu === "help-and-support" ? "bg-[#F15C22]" : ""
           }`} // Apply active class if menu is active
           onClick={toggleHelpAndSupport}
         >
           <img src={Help} alt={`help-support icon`} />
-          <span>Help and Support</span>
+          <span className="text-[16px] text-[#BEBAB9] font-Gilroy font-normal">
+            Help and Support
+          </span>
           {helpAndSupportOpen && activeMenu === "help-and-support" ? (
             <ChevronUp className="h-4 w-4 ml-auto" />
           ) : (
@@ -399,7 +403,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Event Related Queries</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Event Related Queries
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -414,7 +420,9 @@ export const Sidebar = () => {
                 )
               }
             >
-              <span>Technical Help</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Technical Help
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -426,7 +434,9 @@ export const Sidebar = () => {
                 handleSubMenuClick("resources", "/help-and-support/resources")
               }
             >
-              <span>Resources</span>
+              <span className=" text-[16px] font-Gilroy font-normal">
+                Resources
+              </span>
             </li>
             <li
               className={`py-2 px-4 rounded-md flex items-center space-x-2 cursor-pointer ${
@@ -436,10 +446,10 @@ export const Sidebar = () => {
               }`}
               onClick={() => handleSubMenuClick("faq", "/help-and-support/faq")}
             >
-              <span>FAQ</span>
+              <span className=" text-[16px] font-Gilroy font-normal">FAQ</span>
             </li>
           </ul>
-        )}
+        )} */}
       </nav>
 
       {/* PeerHub Name */}

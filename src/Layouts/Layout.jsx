@@ -64,12 +64,6 @@
 
 // export default Layout;
 
-
-
-
-
-
-
 import { Outlet, useLocation } from "react-router-dom";
 import { Sidebar } from "./Sidebar/Sidebar.jsx";
 import { Header } from "./Header/Header.jsx";
@@ -83,40 +77,49 @@ import Help from "../assets/img/Help.png";
 import Settings from "../assets/img/Settings.png";
 
 const Layout = () => {
-    const location = useLocation();
-    const navItems = [
-      { path: "/", icon: Overview, label: "Overview" },
-      { path: "/event-planning", icon: Event, label: "Event Planning" },
-      {
-        path: "/learning-resources",
-        icon: Learning,
-        label: "Learning Resources",
-      },
-      { path: "/core-data-management", icon: Data, label: "Data Management" },
-      { path: "/data-management", icon: Data, label: "Data Management" },
-      { path: "/updates", icon: Overall, label: "Overall Updates" },
-      { path: "/chat", icon: Chat, label: "Peer Chat" },
-      { path: "/help", icon: Help, label: "Help and Support" },
-      { path: "/settings", icon: Settings, label: "Settings" },
-    ];
-    const getTitle = () => {
-      const path = location.pathname;
-      const item = navItems.find((item) => item.path === path);
-      return item ? item.label : 'Overview';
-    };
-  
-    return (
-      <div className="flex min-h-screen bg-[#0B1E29] ">
-        <Sidebar navItems={navItems}/>
-        <div className="flex-1 ml-64">
-          <Header getTitle={getTitle()}/>
-          <main className="bg-[#0B1E29] min-h-[calc(100vh-2rem)] mt-[5.5rem]">
-            {/*  */}
-            <Outlet/>
-          </main>
-        </div>
-      </div>
-    );
+  const location = useLocation();
+  const navItems = [
+    { path: "/", icon: Overview, label: "Overview" },
+    { path: "/event-planning", icon: Event, label: "Event Planning" },
+    {
+      path: "/learning-resources",
+      icon: Learning,
+      label: "Learning Resources",
+    },
+    { path: "/core-data-management", icon: Data, label: "Data Management" },
+    { path: "/data-management", icon: Data, label: "Data Management" },
+    { path: "/updates", icon: Overall, label: "Overall Updates" },
+    { path: "/chat", icon: Chat, label: "Peer Chat" },
+    { path: "/help", icon: Help, label: "Help and Support" },
+    { path: "/settings", icon: Settings, label: "Settings" },
+  ];
+  const getTitle = () => {
+    const path = location.pathname;
+    const item = navItems.find((item) => item.path === path);
+    return item ? item.label : "Overview";
   };
 
-  export default Layout;
+  return (
+    <div className="flex min-h-screen  ">
+      <Sidebar navItems={navItems} />
+      <div className="flex-1 ml-64">
+        <Header getTitle={getTitle()}/>
+        <main className="bg-[#0B1E29] min-h-[calc(100vh-2rem)] mt-[5.5rem]">
+          {/*  */}
+          <Outlet/>
+        </main>
+      </div>
+    </div>
+    // <div className="flex min-h-screen bg-[#0B1E29]">
+    //   <Sidebar navItems={navItems} />
+    //   <div className="flex-1 ml-64 flex flex-col overflow-x-hidden">
+    //     <Header getTitle={getTitle()} />
+    //     <main className="bg-[#0B1E29] flex-1 mt-[5.5rem] overflow-x-hidden">
+    //       <Outlet />
+    //     </main>
+    //   </div>
+    // </div>
+  );
+};
+
+export default Layout;

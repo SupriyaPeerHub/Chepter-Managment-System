@@ -1,13 +1,13 @@
-import Back from "../../assets/img/Back.png"
+import Back from "../../assets/img/Back.png";
 import { Search, BellDot } from "lucide-react";
 export const Header = ({ getTitle }) => {
   return (
-    <div className="bg-[#0B1E29] text-white p-6 flex items-center justify-between fixed w-[calc(100%-15rem)] overflow-hidden z-10 border-b-[0.25px]">
+    <div className="bg-[#0B1E29] items-center justify-between text-white p-6 flex fixed w-[calc(100%-15rem)] overflow-hidden z-10 border-b-2  border-[#546169]">
       <div className="flex gap-8 items-center cursor-pointer justify-center text-2xl">
         <img src={Back} alt="back-img" className="" />
         <h1 className=" font-Gilroy ">{getTitle}</h1>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 pr-10">
         <div className="relative">
           <Search
             className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -16,7 +16,8 @@ export const Header = ({ getTitle }) => {
           <input
             type="text"
             placeholder="Search"
-            className="rounded-sm text-[#FFFFFF] border font-Gilroy text-[14px] placeholder-white border-[#204E68] bg-opacity-10 pl-10 pr-4 w-[15.5rem] py-2 text-sm focus:outline-none"
+            className="rounded-sm text-[#FFFFFF] border text-[14px] placeholder-white border-[#204E68] bg-opacity-10 pl-10 pr-4 w-[18.625rem]
+              font-Gilroy py-2 focus:outline-none"
           />
         </div>
         <div className="relative">

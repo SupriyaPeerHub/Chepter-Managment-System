@@ -26,8 +26,8 @@ import ProgressAdminDetails from "./components/Event Management/Progress/Progres
 import PastAdminDetails from "./components/Event Management/Past Event/PastAdminDetails.jsx";
 import PastManagerDetails from "./components/Event Management/Past Event/PastManagerDetails.jsx";
 import ZZZ from "../zzz.jsx";
-import AdminCollageDetails from "./components/LearningResources/AdminCollageDetails.jsx";
-import ManagerCollageDetails from "./components/LearningResources/ManagerCollageDetails.jsx";
+import AdminCollageDetails from "./components/LearningResources/AdminLearningResources/AdminCollageDetails.jsx";
+import ManagerCollageDetails from "./components/LearningResources/ManagerLearningResources/ManagerCollageDetails.jsx";
 import EventRelatedQueries from "./components/HelpAndSupport/EventRelatedQueries/EventRelatedQueries.jsx";
 import TechnicalHelp from "./components/HelpAndSupport/Technical Help/TechnicalHelp.jsx";
 import FAQ from "./components/HelpAndSupport/FAQ/FAQ.jsx";
@@ -37,6 +37,13 @@ import SponsorshipRequest from "./components/Internal DataManagement/Sponsorship
 import SponsorsReport from "./components/Internal DataManagement/Sponsors Report/SponsorsReport.jsx";
 import EventParticipantsRecord from "./components/Internal DataManagement/Event Participants Record/EventParticipantsRecord.jsx";
 import ManagerEventProposalsDetails from "./components/Event Management/Proposals/ManagerEventProposalsDetails.jsx";
+import AdminEventProposalsDetails from "./components/Event Management/Proposals/AdminEventProposalsDetails.jsx";
+import SponsorshipRequestDetails from "./components/Internal DataManagement/Sponsorship Request/SponsorshipRequestDetails.jsx";
+import EventParticipantsRecordDetails from "./components/Internal DataManagement/Event Participants Record/EventParticipantsRecordDetails.jsx";
+import AddMembers from "./components/Add Members/AddMembers.jsx";
+import CollegeROIdetails from "./components/College Overview/CollegeROIdetails.jsx";
+import TotalEventHost from "./components/College Overview/TotalEventHost.jsx";
+import TotalEventHostDetails from "./components/College Overview/TotalEventHostDetails.jsx";
 function App() {
   const router = createBrowserRouter([
     { path: "/login", element: <Login /> },
@@ -85,10 +92,10 @@ function App() {
           path: "event-management/event-proposals",
           element: <EventProposals />,
         },
-        // {
-        //   path: "event-management/event-proposals/admin-details",
-        //   element: <AdminEventProposalsDetails />,
-        // },
+        {
+          path: "event-management/event-proposals/admin-details",
+          element: <AdminEventProposalsDetails />,
+        },
         {
           path: "event-management/event-proposals/manager-details",
           element: <ManagerEventProposalsDetails />,
@@ -103,6 +110,10 @@ function App() {
           path: "internal-data-management/sponsorship-request",
           element: <SponsorshipRequest />,
         },
+          {
+          path: "internal-data-management/sponsorship-request/details",
+          element: <SponsorshipRequestDetails />,
+        },
         {
           path: "/internal-data-management/sponsors-report",
           element: <SponsorsReport />,
@@ -110,6 +121,10 @@ function App() {
         {
           path: "/internal-data-management/event-participants-record",
           element: <EventParticipantsRecord />,
+        },
+          {
+          path: "/internal-data-management/event-participants-record/admin-details",
+          element: <EventParticipantsRecordDetails />,
         },
         // Core Data Management
         { path: "core-data-management", element: <CoreDataManagement /> },
@@ -126,6 +141,11 @@ function App() {
         },
         { path: "help-and-support/resources", element: <Resources /> },
         { path: "/help-and-support/faq", element: <FAQ /> },
+         { path: "add-members", element: <AddMembers /> },
+         { path: "total-events-hosted", element: <TotalEventHost /> },
+         { path: "total-events-hosted-details", element: <TotalEventHostDetails /> },
+         { path: "college-ROI-details", element: <CollegeROIdetails /> },
+
         { path: "settings", element: <SettingsPage /> },
         { path: "test", element: <Test /> },
         { path: "test2", element: <Test2 /> },

@@ -4,6 +4,7 @@ import AddEventCard from "../../UI/AddEventCard";
 import { useState } from "react";
 import PlanAnEvent from "../../UI/PlanAnEvent";
 import upload from "../../assets/img/upload.png";
+import { FiPlus } from "react-icons/fi";
 
 const EventPlanning = () => {
   const [isPlanEvent, setIsPlanEvent] = useState(false);
@@ -21,10 +22,10 @@ const EventPlanning = () => {
       {/* 1st Part */}
       <div className="flex justify-end mb-6 mt-3 space-x-3">
         <div
-          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy cursor-pointer"
+          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy cursor-pointer flex items-center"
           onClick={() => setIsPlanEvent(true)}
         >
-          + Plan an Event
+          <FiPlus className="text-[16px] font-Gilroy font-normal pt-0.5" /> Plan an Event
         </div>
         <button className="flex items-center space-x-2 font-Gilroy bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md cursor-pointer">
           <Filter size={16} />

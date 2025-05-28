@@ -35,10 +35,6 @@
 //   slotProps: { legend: { hidden: true } },
 // };
 
-
-
-
-
 import { PieChart } from "@mui/x-charts/PieChart";
 import Box from "@mui/material/Box";
 import { useState } from "react";
@@ -66,21 +62,6 @@ export default function EventProgressCard() {
           ]}
           {...pieParams}
         />
-        {/* Text inside the pie chart */}
-        {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-bold"
-          // style={{
-          //   position: "absolute",
-          //   top: "50%",
-          //   left: "50%",
-          //   transform: "translate(-50%, -50%)",
-          //   textAlign: "center",
-          //   fontWeight: "bold",
-          // }}
-        >
-          <div className="text-[#0B1E29] font-Gilroy-Regular text-[28px]">{totalEvents}</div>
-          <div className="text-[#0B1E29] text-[12px]">Total</div>
-          <div className="text-[#0B1E29] text-[12px]">no. of Events</div>
-        </div> */}
       </Box>
     </div>
   );

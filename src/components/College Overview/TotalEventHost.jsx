@@ -1,8 +1,8 @@
-import EventCard from "../../../UI/EventCard";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../../UI/DropDown";
-import SortFilter from "../../../UI/SortFilter";
+import DropDown from "../../UI/DropDown";
+import SortFilter from "../../UI/SortFilter";
+import EventCard from "../../UI/EventCard";
 
 // Sample data
 const zones = [
@@ -41,7 +41,7 @@ const sortOptions = [
   { id: "upcoming-week", label: "Upcoming Week" },
   { id: "upcoming-month", label: "Upcoming Month" },
 ];
-const InProgress = () => {
+const TotalEventHost = () => {
   const [selectedZones, setSelectedZones] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   const [selectedColleges, setSelectedColleges] = useState([]);
@@ -57,11 +57,11 @@ const InProgress = () => {
   };
 
   return (
-    <div className="flex-1 bg-[#0c1824] p-6">
+    <div className="flex-1 bg-[#0c1824] p-6 h-full">
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
-          Upcoming Events
+          Event Details
         </h1>
         <div className="flex justify-between pb-6">
           {/* dropdown */}
@@ -109,42 +109,36 @@ const InProgress = () => {
             onApply={handleApplySort} // Pass the apply handler
           />
         )}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 gap-3">
           {/* Event Card */}
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
+          <EventCard variant="college-overview" />
         </div>
       </div>
     </div>
   );
 };
 
-export default InProgress;
+export default TotalEventHost;

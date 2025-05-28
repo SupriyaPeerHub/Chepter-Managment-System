@@ -1,10 +1,10 @@
-import AdminLearningResources from "./AdminLearningResources";
-import ManagerLearningResources from "./ManagerLearningResources";
-import UserLearningResources from "./UserLearningResources";
+import AdminLearningResources from "./AdminLearningResources/AdminLearningResources";
+import ManagerLearningResources from "./ManagerLearningResources/ManagerLearningResources";
+import UserLearningResources from "./CoreLearningResources/UserLearningResources";
 
 const LearningResources = () => {
   // const role = localStorage.getItem("role"); // Or use from context/auth
-  const role = "manager";
+  const role = ""; //"manager";
 
   if (role === "admin") {
     return <AdminLearningResources />;

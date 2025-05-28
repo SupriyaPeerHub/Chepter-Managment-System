@@ -22,6 +22,9 @@ import { Link } from "react-router-dom";
 import Test from "../../Test";
 import Test2 from "../../test2";
 import CollegeDistribution from "../../UI/CollegeDistribution";
+import { FiPlus } from "react-icons/fi";
+import Plus from "../../assets/img/Plus.png";
+import Plan from "../../assets/img/Plan.png";
 
 const Overview = () => {
   const [isPlanEvent, setIsPlanEvent] = useState(false);
@@ -60,10 +63,11 @@ const Overview = () => {
       {/* 1st Part */}
       <div className="flex justify-end mb-6 mt-3 space-x-3">
         <div
-          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy cursor-pointer"
+          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-Gilroy cursor-pointer flex items-center"
           onClick={() => setIsPlanEvent(true)}
         >
-          + Plan an Event
+          <FiPlus className="text-[16px] font-Gilroy font-normal pt-0.5" /> Plan
+          an Event
         </div>
         <button className="flex items-center space-x-2 font-Gilroy bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md cursor-pointer">
           <Filter size={16} />
@@ -180,7 +184,7 @@ const Overview = () => {
       <div className="mt-6">
         {/* Right to Left Scrolling Gallery */}
         <div className="overflow-hidden">
-          <div className="scroll-gallery whitespace-nowrap">
+          <div className="scroll-gallery scroll-rtl">
             {[...galleryArray, ...galleryArray].map((gallery, index) => (
               <img
                 key={index}
@@ -194,19 +198,21 @@ const Overview = () => {
 
         {/* Left to Right Scrolling Gallery */}
         <div className="overflow-hidden mt-6">
-          <div className="flex animate-scroll-left">
-            {galleryArray.concat(galleryArray).map((gallery, index) => (
+          <div className="scroll-gallery scroll-ltr">
+            {[...galleryArray, ...galleryArray].map((gallery, index) => (
               <img
                 key={index}
                 src={gallery.img}
-                alt={`Slide_${index}`}
-                className="w-[250px] h-[200px] m-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105 inline-block"
+                alt={`Slide ${index}`}
+                className="w-[250px] h-[200px] mr-4 rounded-lg shadow-lg transition-transform duration-500 hover:scale-105 inline-block"
               />
             ))}
           </div>
         </div>
       </div>
     </div>
+
+    //  Responsive Design Core
 
     //2. For Deperment Chief
     // <div className="flex-1 bg-[#0c1824] p-6">

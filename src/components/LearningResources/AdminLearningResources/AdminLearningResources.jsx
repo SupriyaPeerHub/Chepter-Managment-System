@@ -1,10 +1,7 @@
-
-
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import DropDown from "../../UI/DropDown";
-import Collage from "../../UI/Collage";
-import upload from "../../assets/img/upload.png";
+import DropDown from "../../../UI/DropDown";
+import Collage from "../../../UI/Collage";
 
 // Sample data
 const zones = [
@@ -22,7 +19,7 @@ const states = [
   { id: "fl", label: "Florida" },
 ];
 
-const ManagerLearningResources = () => {
+const AdminLearningResources = () => {
   const [selectedZones, setSelectedZones] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   return (
@@ -30,7 +27,7 @@ const ManagerLearningResources = () => {
       {/* 1st Part */}
       <div>
         <h1 className="text-[#FFFFFF] text-lg pb-4 font-Gilroy font-normal">
-          Learning Resources
+          Upcoming Events
         </h1>
         <div className="flex justify-between pb-6">
           {/* dropdown */}
@@ -48,26 +45,16 @@ const ManagerLearningResources = () => {
               onChange={setSelectedStates}
             />
           </div>
-          <div className="flex gap-3">
-            {/* it is only for Manager */}
-            <button className="flex items-center space-x-2 bg-[#F3642A] text-white px-3 py-2 rounded-md">
-              <img
-                src={upload}
-                alt="upload-doc"
-                className="w-[22px] h-[22px]"
-              />
-              <span>Upload Resources</span>
-            </button>
-            <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
-              <ArrowUpDown size={16} />
-              <span>Sort</span>
-            </button>
-          </div>
+          {/* Sort */}
+          <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md">
+            <ArrowUpDown size={16} />
+            <span>Sort</span>
+          </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {/* Event Proposals */}
           {Array.from({ length: 14 }).map((_, index) => (
-            <Collage key={index} fromPage="manager" />
+            <Collage key={index} fromPage="admin" />
           ))}
         </div>
       </div>
@@ -75,4 +62,4 @@ const ManagerLearningResources = () => {
   );
 };
 
-export default ManagerLearningResources;
+export default AdminLearningResources;
